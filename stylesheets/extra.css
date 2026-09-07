@@ -3,93 +3,190 @@
   --md-text-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   --md-code-font: ui-monospace, Consolas, monospace;
 
-  /* 孔雀蓝负责课程信息，杏橙负责汇报提醒；深浅同色搭配。 */
-  --course-canvas: #ffffff;
-  --course-surface: #ffffff;
-  --course-primary: #087f8c;
-  --course-soft: #e4f3f3;
-  --course-hover: #edf8f8;
-  --course-border: #c8e1e2;
-  --course-heading: #075e6c;
-  --course-text: #2c4149;
-  --course-muted: #536c72;
-  --course-link: #096b8a;
-  --course-link-hover: #075069;
-  --course-marker: #1294a0;
-  --course-warm: #f3aa70;
-  --course-warm-soft: #ffe7d0;
-  --course-warm-surface: #fffaf5;
-  --course-warm-border: #edc4a0;
-  --course-warm-text: #8a421d;
+  /* 唯一基础色板：深蓝品牌色，青绿仅作点缀，橙色仅用于通知。 */
+  --course-primary: #1E3A5F;
+  --course-primary-hover: #16304F;
+  --course-accent: #2A9D8F;
+  --course-canvas: #F6F8FB;
+  --course-surface: #FFFFFF;
+  --course-soft: #EEF3F7;
+  --course-text: #1F2937;
+  --course-muted: #64748B;
+  --course-heading: #17324D;
+  --course-border: #D9E1E8;
+  --course-warning: #B85C24;
+  --course-warning-bg: #FFF4E8;
+  --course-link: #176B87;
+  --course-link-hover: #124F65;
+
+  /* 派生状态色也集中维护；浅灰底上的小字略加深以满足对比度。 */
+  --course-muted-on-tint: color-mix(in srgb, var(--course-muted) 88%, var(--course-text));
+  --course-on-primary: var(--course-surface);
+  --course-on-primary-muted: color-mix(in srgb, var(--course-on-primary) 82%, var(--course-primary));
+  --course-hover: var(--course-soft);
+  --course-focus: var(--course-primary);
+  --course-search-bg: var(--course-primary-hover);
+  --course-search-hover: color-mix(in srgb, var(--course-primary-hover) 90%, var(--course-text));
+  --course-selection: color-mix(in srgb, var(--course-accent) 16%, var(--course-surface));
+  --course-shadow: color-mix(in srgb, var(--course-primary) 5%, transparent);
+  --course-overlay: color-mix(in srgb, var(--course-primary) 48%, transparent);
+  --course-fg-subtle: color-mix(in srgb, var(--course-text) 40%, transparent);
+  --course-fg-faint: color-mix(in srgb, var(--course-text) 7%, transparent);
+  --course-surface-light: color-mix(in srgb, var(--course-surface) 70%, transparent);
+  --course-surface-lighter: color-mix(in srgb, var(--course-surface) 30%, transparent);
+  --course-surface-lightest: color-mix(in srgb, var(--course-surface) 12%, transparent);
 }
 
 [data-md-color-scheme="default"][data-md-color-primary="custom"] {
   --md-primary-fg-color: var(--course-primary);
-  --md-primary-fg-color--light: #1294a0;
-  --md-primary-fg-color--dark: #086571;
-  --md-primary-bg-color: #ffffff;
-  --md-primary-bg-color--light: #e5f8f8;
+  --md-primary-fg-color--light: var(--course-primary);
+  --md-primary-fg-color--dark: var(--course-primary-hover);
+  --md-primary-bg-color: var(--course-on-primary);
+  --md-primary-bg-color--light: var(--course-on-primary-muted);
   --md-default-bg-color: var(--course-canvas);
-  --md-default-bg-color--light: #ffffffb3;
-  --md-default-bg-color--lighter: #ffffff4d;
-  --md-default-bg-color--lightest: #ffffff1f;
+  --md-default-bg-color--light: var(--course-surface-light);
+  --md-default-bg-color--lighter: var(--course-surface-lighter);
+  --md-default-bg-color--lightest: var(--course-surface-lightest);
   --md-default-fg-color: var(--course-text);
-  --md-default-fg-color--light: var(--course-muted);
-  --md-default-fg-color--lighter: #2c414966;
-  --md-default-fg-color--lightest: #2c414912;
+  --md-default-fg-color--light: var(--course-muted-on-tint);
+  --md-default-fg-color--lighter: var(--course-fg-subtle);
+  --md-default-fg-color--lightest: var(--course-fg-faint);
   --md-typeset-a-color: var(--course-link);
   --md-accent-fg-color: var(--course-link-hover);
-  --md-accent-fg-color--transparent: #096b8a14;
+  --md-accent-fg-color--transparent: var(--course-hover);
+  --md-typeset-mark-color: var(--course-selection);
   --md-code-fg-color: var(--course-text);
   --md-code-bg-color: var(--course-soft);
   --md-admonition-bg-color: var(--course-surface);
-  --md-footer-bg-color: var(--course-soft);
-  --md-footer-bg-color--dark: var(--course-soft);
+  --md-admonition-fg-color: var(--course-text);
+  --md-footer-bg-color: var(--course-surface);
+  --md-footer-bg-color--dark: var(--course-surface);
   --md-footer-fg-color: var(--course-text);
   --md-footer-fg-color--light: var(--course-muted);
   --md-footer-fg-color--lighter: var(--course-muted);
 }
 
-/* 孔雀蓝顶栏配白字，页脚延续浅青底色。 */
+/* 深蓝顶栏；所有状态只调整颜色和不占布局空间的视觉效果。 */
+.md-header,
+.md-tabs {
+  background-color: var(--course-primary);
+  color: var(--course-on-primary);
+}
 .md-header {
   border-bottom: 1px solid var(--md-primary-fg-color--dark);
   box-shadow: none;
 }
+.md-header__button:hover,
+.md-header__button:active {
+  background-color: var(--course-primary-hover);
+  color: var(--course-on-primary);
+}
+.md-header__button:focus-visible,
+.md-tabs__link:focus-visible { outline: 2px solid var(--course-on-primary); }
+.md-tabs__link:hover,
+.md-tabs__link--active { color: var(--course-on-primary); }
 .md-footer { border-top: 1px solid var(--course-border); }
 .md-typeset h1,
-.md-typeset h2 { color: var(--course-heading); }
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 { color: var(--course-heading); }
 .md-typeset h1 { font-weight: 500; }
 .md-typeset h2 {
-  border-left: 3px solid var(--course-warm);
+  border-left: 3px solid var(--course-accent);
   padding-left: 0.55rem;
   font-weight: 600;
 }
-/* 只调整桌面收起状态；展开搜索和手机搜索沿用原生白底深字。 */
-@media (min-width: 60em) {
-  .md-header .md-search__form { background-color: #0000001f; }
-  .md-header .md-search__form:hover { background-color: #0000002e; }
+.md-typeset a:hover,
+.md-typeset a:focus-visible { color: var(--course-link-hover); }
+.md-typeset a:active { color: var(--course-primary-hover); }
+.md-typeset a:focus-visible,
+.md-nav__link:focus-visible {
+  outline: 2px solid var(--course-focus);
+  outline-offset: 2px;
+}
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active { color: var(--course-primary); }
+.md-nav__link:hover,
+.md-nav__link:focus-visible,
+.md-nav__item .md-nav__link--active:hover,
+.md-nav__item .md-nav__link--active:focus-visible { color: var(--course-link-hover); }
+::selection {
+  background-color: var(--course-selection);
+  color: var(--course-text);
 }
 
-/* 杏色通知与青色课程区形成冷暖对比，正文保留足够深的文字。 */
+/* 搜索：收起时深蓝底，展开及手机状态白底，不改变原生占位符行为。 */
+.md-search__form,
+.md-search__scrollwrap {
+  background-color: var(--course-surface);
+  color: var(--course-text);
+}
+.md-search__input { color: var(--course-text); }
+.md-search__input + .md-search__icon { color: var(--course-muted); }
+.md-search__form:focus-within {
+  box-shadow: inset 0 0 0 2px var(--course-focus);
+}
+.md-search__overlay { background-color: var(--course-overlay); }
+.md-search-result__meta {
+  background-color: var(--course-soft);
+  color: var(--course-muted-on-tint);
+}
+.md-search-result .md-typeset { color: var(--course-muted-on-tint); }
+.md-search-result__title { color: var(--course-heading); }
+.md-search-result mark,
+.md-search-result__more > summary { color: var(--course-link); }
+.md-search-result__link:hover,
+.md-search-result__link:focus,
+.md-search-result__item--active > .md-search-result__link {
+  background-color: var(--course-hover);
+  box-shadow: 0 -1px 0 var(--course-hover);
+}
+.md-search-result__link:active { background-color: var(--course-selection); }
+@media (min-width: 60em) {
+  .md-header .md-search__form { background-color: var(--course-search-bg); }
+  .md-header .md-search__form:hover { background-color: var(--course-search-hover); }
+  .md-header .md-search__form:focus-within {
+    box-shadow: inset 0 0 0 2px var(--course-on-primary);
+  }
+  .md-header .md-search__input,
+  .md-header .md-search__input + .md-search__icon { color: var(--course-on-primary); }
+  .md-header .md-search__input::placeholder { color: var(--course-on-primary-muted); }
+}
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  background-color: var(--course-surface);
+  color: var(--course-text);
+}
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form:focus-within {
+  box-shadow: inset 0 0 0 2px var(--course-focus);
+}
+[data-md-toggle="search"]:checked ~ .md-header .md-search__input,
+[data-md-toggle="search"]:checked ~ .md-header .md-search__input + .md-search__icon {
+  color: var(--course-text);
+}
+
+/* 橙色仅用于通知边线、图标和浅底，通知文字保持深色。 */
 .md-typeset .admonition.note,
 .md-typeset details.note {
-  border-color: var(--course-warm-border);
-  border-left: 3px solid var(--course-warm);
+  border-color: var(--course-border);
+  border-left: 3px solid var(--course-warning);
   border-radius: 0.3rem;
-  background-color: var(--course-warm-surface);
-  box-shadow: none;
+  background-color: var(--course-surface);
+  color: var(--course-text);
+  box-shadow: 0 1px 3px var(--course-shadow);
 }
 .md-typeset .note > .admonition-title,
 .md-typeset .note > summary {
-  background-color: var(--course-warm-soft);
-  color: var(--course-warm-text);
+  background-color: var(--course-warning-bg);
+  color: var(--course-heading);
 }
 .md-typeset .note > .admonition-title::before,
-.md-typeset .note > summary::before { background-color: var(--course-warm-text); }
-.md-typeset .note > summary::after { color: var(--course-warm-text); }
+.md-typeset .note > summary::before { background-color: var(--course-warning); }
+.md-typeset .note > summary::after { color: var(--course-warning); }
 .md-typeset .admonition.note:focus-within,
 .md-typeset details.note:focus-within {
-  box-shadow: 0 0 0 2px var(--course-link);
+  box-shadow: 0 0 0 2px var(--course-focus);
 }
 
 /* 通知框内各级有序列表统一显示为 1、2、3。 */
@@ -101,9 +198,10 @@
 .md-typeset .course-info {
   margin: 1rem 0 1.6rem;
   border: 1px solid var(--course-border);
-  border-top: 3px solid var(--course-primary);
+  border-top: 3px solid var(--course-border);
   border-radius: 0.3rem;
   background: var(--course-surface);
+  box-shadow: 0 1px 3px var(--course-shadow);
   overflow: hidden;
   overflow-wrap: anywhere;
 }
@@ -127,10 +225,10 @@
 }
 .md-typeset .course-info__title code {
   padding: 0.2em 0.65em;
-  border: 1px solid var(--course-warm-border);
+  border: 1px solid var(--course-border);
   border-radius: 0.25rem;
-  background: var(--course-warm-soft);
-  color: var(--course-warm-text);
+  background: var(--course-soft);
+  color: var(--course-primary);
   font-size: 0.65rem;
 }
 
@@ -205,30 +303,19 @@
 
 /* 三张资料表：统一外观，按内容分配列宽，容器在窄屏横向滚动。 */
 .md-typeset .course-table {
-  --table-tint: var(--course-soft);
-  --table-ink: var(--course-heading);
-  --table-border: var(--course-border);
-  --table-stripe: #f5fbfb;
-  --table-hover: var(--course-hover);
   margin: 1rem 0 1.6rem;
-  border: 1px solid var(--table-border);
+  border: 1px solid var(--course-border);
   border-radius: 0.3rem;
   background: var(--course-surface);
+  box-shadow: 0 1px 3px var(--course-shadow);
   overflow-x: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--table-ink) var(--table-tint);
+  scrollbar-color: var(--course-muted) var(--course-soft);
 }
 
-/* 汇报安排与上方汇报通知使用同一组杏色，资料表保持青色。 */
-.md-typeset .course-table--presentations {
-  --table-tint: var(--course-warm-soft);
-  --table-ink: var(--course-warm-text);
-  --table-border: var(--course-warm-border);
-  --table-stripe: var(--course-warm-surface);
-  --table-hover: #fff2e6;
-}
+/* 三类资料表共用中性色，不再用橙色区分普通汇报安排。 */
 .md-typeset .course-table:focus-visible {
-  outline: 2px solid var(--course-link);
+  outline: 2px solid var(--course-focus);
   outline-offset: 3px;
 }
 
@@ -259,41 +346,45 @@
 .md-typeset .course-table table:not([class]) th {
   min-width: 0;
   padding: 0.8rem 0.8rem;
-  background: var(--table-tint);
-  color: var(--table-ink);
+  background: var(--course-soft);
+  color: var(--course-heading);
   font-size: 0.7rem;
   font-weight: 650;
   vertical-align: middle;
 }
 .md-typeset .course-table table:not([class]) td {
   padding: 0.75rem 0.8rem;
-  border-top: 1px solid var(--table-border);
+  border-top: 1px solid var(--course-border);
   vertical-align: top;
   overflow-wrap: anywhere;
 }
 .md-typeset .course-table table:not([class]) td:first-child {
-  color: var(--table-ink);
+  color: var(--course-heading);
   font-weight: 600;
 }
 .md-typeset .course-table table:not([class]) tbody tr { transition: none; }
 .md-typeset .course-table table:not([class]) tbody tr:nth-child(even) {
-  background: var(--table-stripe);
+  background: var(--course-canvas);
 }
 .md-typeset .course-table table:not([class]) tbody tr:hover,
 .md-typeset .course-table table:not([class]) tbody tr:focus-within {
-  background: var(--table-hover);
+  background: var(--course-hover);
   box-shadow: none;
 }
 .md-typeset .course-table a {
   color: var(--course-link);
   text-decoration: underline;
-  text-decoration-color: var(--course-marker);
+  text-decoration-color: var(--course-link);
   text-underline-offset: 0.18em;
   overflow-wrap: anywhere;
 }
 .md-typeset .course-table a:hover,
 .md-typeset .course-table a:focus-visible {
   color: var(--course-link-hover);
+  text-decoration-color: currentColor;
+}
+.md-typeset .course-table a:active {
+  color: var(--course-primary-hover);
   text-decoration-color: currentColor;
 }
 
