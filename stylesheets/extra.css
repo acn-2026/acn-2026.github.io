@@ -263,7 +263,7 @@
   font-size: 0.75rem;
   line-height: 1.8;
 }
-.course-info__facts dd strong { color: var(--course-heading); font-size: 0.82rem; }
+.course-info__facts dd strong { color: var(--course-heading); font-size: 0.95rem; }
 
 .course-info__team {
   margin: 0 1.15rem;
@@ -297,7 +297,7 @@
 .course-info__team li strong {
   margin-right: 0.45em;
   color: var(--course-heading);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 640px) {
@@ -398,11 +398,11 @@
 }
 
 .md-typeset .course-table--schedule table:not([class]) { min-width: 760px; }
-/* 课次、主题和 PPT 保持紧凑，论文完整标题占用剩余宽度。 */
+/* 课次、主题保持紧凑，PPT 稍宽，论文完整标题占用剩余宽度。 */
 .course-table--schedule th:nth-child(1) { width: 5rem; }
 .course-table--schedule th:nth-child(2) { width: 6rem; }
 .course-table--schedule th:nth-child(3) { width: auto; }
-.course-table--schedule th:nth-child(4) { width: 4.5rem; }
+.course-table--schedule th:nth-child(4) { width: 6rem; }
 .md-typeset .course-table--schedule table:not([class]) th,
 .md-typeset .course-table--schedule table:not([class]) td {
   padding: 0.6rem 0.65rem;
