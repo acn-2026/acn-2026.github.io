@@ -264,6 +264,7 @@
   line-height: 1.7;
 }
 .course-info__facts dd strong { color: var(--course-text); font-size: 0.84rem; }
+.course-info__facts dd:nth-of-type(2) strong { font-size: 0.88rem; }
 
 .course-info__team {
   margin: 0 1.15rem;
