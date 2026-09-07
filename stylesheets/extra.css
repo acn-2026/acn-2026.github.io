@@ -3,21 +3,21 @@
   --md-text-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   --md-code-font: ui-monospace, Consolas, monospace;
 
-  /* 唯一基础色板：深蓝品牌色，青绿仅作点缀，橙色仅用于通知。 */
-  --course-primary: #1E3A5F;
-  --course-primary-hover: #16304F;
-  --course-accent: #2A9D8F;
-  --course-canvas: #F6F8FB;
+  /* 唯一基础色板：明亮柔和的蓝、暖白底色，灰绿点缀，橙色仅用于通知。 */
+  --course-primary: #4C70AE;
+  --course-primary-hover: #3D5E97;
+  --course-accent: #658475;
+  --course-canvas: #FAF8F4;
   --course-surface: #FFFFFF;
-  --course-soft: #EEF3F7;
+  --course-soft: #F3F0EA;
   --course-text: #1F2937;
-  --course-muted: #64748B;
-  --course-heading: #17324D;
-  --course-border: #D9E1E8;
+  --course-muted: #746F6B;
+  --course-heading: #40577C;
+  --course-border: #E3DED5;
   --course-warning: #B85C24;
   --course-warning-bg: #FFF4E8;
-  --course-link: #176B87;
-  --course-link-hover: #124F65;
+  --course-link: #4468A6;
+  --course-link-hover: #365487;
 
   /* 派生状态色也集中维护；浅灰底上的小字略加深以满足对比度。 */
   --course-muted-on-tint: color-mix(in srgb, var(--course-muted) 88%, var(--course-text));
@@ -66,7 +66,7 @@
   --md-footer-fg-color--lighter: var(--course-muted);
 }
 
-/* 深蓝顶栏；所有状态只调整颜色和不占布局空间的视觉效果。 */
+/* 柔和蓝顶栏；所有状态只调整颜色和不占布局空间的视觉效果。 */
 .md-header,
 .md-tabs {
   background-color: var(--course-primary);
@@ -117,7 +117,7 @@
   color: var(--course-text);
 }
 
-/* 搜索：收起时深蓝底，展开及手机状态白底，不改变原生占位符行为。 */
+/* 搜索：收起时使用较深的主色，展开及手机状态白底，不改变原生占位符行为。 */
 .md-search__form,
 .md-search__scrollwrap {
   background-color: var(--course-surface);
