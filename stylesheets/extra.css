@@ -1,0 +1,320 @@
+/* 保留 Material 原生排版，使用系统字体，不加载 Google Fonts。 */
+:root {
+  --md-text-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  --md-code-font: ui-monospace, Consolas, monospace;
+
+  /* 孔雀蓝负责课程信息，杏橙负责汇报提醒；深浅同色搭配。 */
+  --course-canvas: #ffffff;
+  --course-surface: #ffffff;
+  --course-primary: #087f8c;
+  --course-soft: #e4f3f3;
+  --course-hover: #edf8f8;
+  --course-border: #c8e1e2;
+  --course-heading: #075e6c;
+  --course-text: #2c4149;
+  --course-muted: #536c72;
+  --course-link: #096b8a;
+  --course-link-hover: #075069;
+  --course-marker: #1294a0;
+  --course-warm: #f3aa70;
+  --course-warm-soft: #ffe7d0;
+  --course-warm-surface: #fffaf5;
+  --course-warm-border: #edc4a0;
+  --course-warm-text: #8a421d;
+}
+
+[data-md-color-scheme="default"][data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--course-primary);
+  --md-primary-fg-color--light: #1294a0;
+  --md-primary-fg-color--dark: #086571;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #e5f8f8;
+  --md-default-bg-color: var(--course-canvas);
+  --md-default-bg-color--light: #ffffffb3;
+  --md-default-bg-color--lighter: #ffffff4d;
+  --md-default-bg-color--lightest: #ffffff1f;
+  --md-default-fg-color: var(--course-text);
+  --md-default-fg-color--light: var(--course-muted);
+  --md-default-fg-color--lighter: #2c414966;
+  --md-default-fg-color--lightest: #2c414912;
+  --md-typeset-a-color: var(--course-link);
+  --md-accent-fg-color: var(--course-link-hover);
+  --md-accent-fg-color--transparent: #096b8a14;
+  --md-code-fg-color: var(--course-text);
+  --md-code-bg-color: var(--course-soft);
+  --md-admonition-bg-color: var(--course-surface);
+  --md-footer-bg-color: var(--course-soft);
+  --md-footer-bg-color--dark: var(--course-soft);
+  --md-footer-fg-color: var(--course-text);
+  --md-footer-fg-color--light: var(--course-muted);
+  --md-footer-fg-color--lighter: var(--course-muted);
+}
+
+/* 孔雀蓝顶栏配白字，页脚延续浅青底色。 */
+.md-header {
+  border-bottom: 1px solid var(--md-primary-fg-color--dark);
+  box-shadow: none;
+}
+.md-footer { border-top: 1px solid var(--course-border); }
+.md-typeset h1,
+.md-typeset h2 { color: var(--course-heading); }
+.md-typeset h1 { font-weight: 500; }
+.md-typeset h2 {
+  border-left: 3px solid var(--course-warm);
+  padding-left: 0.55rem;
+  font-weight: 600;
+}
+/* 只调整桌面收起状态；展开搜索和手机搜索沿用原生白底深字。 */
+@media (min-width: 60em) {
+  .md-header .md-search__form { background-color: #0000001f; }
+  .md-header .md-search__form:hover { background-color: #0000002e; }
+}
+
+/* 杏色通知与青色课程区形成冷暖对比，正文保留足够深的文字。 */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--course-warm-border);
+  border-left: 3px solid var(--course-warm);
+  border-radius: 0.3rem;
+  background-color: var(--course-warm-surface);
+  box-shadow: none;
+}
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: var(--course-warm-soft);
+  color: var(--course-warm-text);
+}
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before { background-color: var(--course-warm-text); }
+.md-typeset .note > summary::after { color: var(--course-warm-text); }
+.md-typeset .admonition.note:focus-within,
+.md-typeset details.note:focus-within {
+  box-shadow: 0 0 0 2px var(--course-link);
+}
+
+/* 通知框内各级有序列表统一显示为 1、2、3。 */
+.md-typeset .admonition ol {
+  list-style-type: decimal;
+}
+
+/* 课程信息：一个紧凑面板，文字仍由 index.md 维护。 */
+.md-typeset .course-info {
+  margin: 1rem 0 1.6rem;
+  border: 1px solid var(--course-border);
+  border-top: 3px solid var(--course-primary);
+  border-radius: 0.3rem;
+  background: var(--course-surface);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.course-info__title {
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid var(--course-border);
+  background: var(--course-soft);
+}
+.md-typeset .course-info__title p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.8rem;
+  margin: 0;
+}
+.course-info__title strong {
+  color: var(--course-heading);
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+.md-typeset .course-info__title code {
+  padding: 0.2em 0.65em;
+  border: 1px solid var(--course-warm-border);
+  border-radius: 0.25rem;
+  background: var(--course-warm-soft);
+  color: var(--course-warm-text);
+  font-size: 0.65rem;
+}
+
+.course-info__facts { padding: 1rem 1.15rem; }
+.md-typeset .course-info__facts dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  gap: 0.35rem 1.5rem;
+  margin: 0;
+}
+.md-typeset .course-info__facts dt {
+  margin: 0;
+  color: var(--course-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+.md-typeset .course-info__facts dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--course-text);
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+.course-info__facts dd strong { color: var(--course-heading); font-size: 0.82rem; }
+
+.course-info__team {
+  margin: 0 1.15rem;
+  padding: 0.85rem 0 1.05rem;
+  border-top: 1px solid var(--course-border);
+}
+.md-typeset .course-info__team > p:first-child {
+  margin: 0;
+  color: var(--course-heading);
+  font-size: 0.78rem;
+}
+.md-typeset .course-info__team > p:nth-child(2) {
+  margin: 0.35rem 0 0.7rem;
+  color: var(--course-muted);
+  font-size: 0.68rem;
+}
+.md-typeset .course-info__team ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.md-typeset .course-info__team li {
+  min-width: 0;
+  margin: 0;
+  color: var(--course-muted);
+  font-size: 0.72rem;
+}
+.course-info__team li strong {
+  margin-right: 0.45em;
+  color: var(--course-heading);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 640px) {
+  .md-typeset .course-info__facts dl {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-auto-flow: row;
+  }
+  .md-typeset .course-info__facts dt:not(:first-child) { margin-top: 0.65rem; }
+  .md-typeset .course-info__team ul { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* 三张资料表：统一外观，按内容分配列宽，容器在窄屏横向滚动。 */
+.md-typeset .course-table {
+  --table-tint: var(--course-soft);
+  --table-ink: var(--course-heading);
+  --table-border: var(--course-border);
+  --table-stripe: #f5fbfb;
+  --table-hover: var(--course-hover);
+  margin: 1rem 0 1.6rem;
+  border: 1px solid var(--table-border);
+  border-radius: 0.3rem;
+  background: var(--course-surface);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--table-ink) var(--table-tint);
+}
+
+/* 汇报安排与上方汇报通知使用同一组杏色，资料表保持青色。 */
+.md-typeset .course-table--presentations {
+  --table-tint: var(--course-warm-soft);
+  --table-ink: var(--course-warm-text);
+  --table-border: var(--course-warm-border);
+  --table-stripe: var(--course-warm-surface);
+  --table-hover: #fff2e6;
+}
+.md-typeset .course-table:focus-visible {
+  outline: 2px solid var(--course-link);
+  outline-offset: 3px;
+}
+
+/* 外层负责滚动，清除 Material 自动容器的重复边距与滚动区域。 */
+.md-typeset .course-table .md-typeset__scrollwrap {
+  margin: 0;
+  overflow: visible;
+}
+.md-typeset .course-table .md-typeset__table {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.md-typeset .course-table table:not([class]) {
+  display: table;
+  width: 100%;
+  min-width: 700px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  color: var(--course-text);
+  font-size: 0.74rem;
+  line-height: 1.65;
+}
+.md-typeset .course-table table:not([class]) th {
+  min-width: 0;
+  padding: 0.8rem 0.8rem;
+  background: var(--table-tint);
+  color: var(--table-ink);
+  font-size: 0.7rem;
+  font-weight: 650;
+  vertical-align: middle;
+}
+.md-typeset .course-table table:not([class]) td {
+  padding: 0.75rem 0.8rem;
+  border-top: 1px solid var(--table-border);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.md-typeset .course-table table:not([class]) td:first-child {
+  color: var(--table-ink);
+  font-weight: 600;
+}
+.md-typeset .course-table table:not([class]) tbody tr { transition: none; }
+.md-typeset .course-table table:not([class]) tbody tr:nth-child(even) {
+  background: var(--table-stripe);
+}
+.md-typeset .course-table table:not([class]) tbody tr:hover,
+.md-typeset .course-table table:not([class]) tbody tr:focus-within {
+  background: var(--table-hover);
+  box-shadow: none;
+}
+.md-typeset .course-table a {
+  color: var(--course-link);
+  text-decoration: underline;
+  text-decoration-color: var(--course-marker);
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+.md-typeset .course-table a:hover,
+.md-typeset .course-table a:focus-visible {
+  color: var(--course-link-hover);
+  text-decoration-color: currentColor;
+}
+
+.md-typeset .course-table--schedule table:not([class]) { min-width: 760px; }
+.course-table--schedule th:nth-child(1) { width: 12%; }
+.course-table--schedule th:nth-child(2) { width: 22%; }
+.course-table--schedule th:nth-child(3) { width: 22%; }
+.course-table--schedule th:nth-child(4) { width: 20%; }
+.course-table--schedule th:nth-child(5) { width: 24%; }
+
+.course-table--presentations th:nth-child(1) { width: 14%; }
+.course-table--presentations th:nth-child(2) { width: 23%; }
+.course-table--presentations th:nth-child(3) { width: 22%; }
+.course-table--presentations th:nth-child(4) { width: 41%; }
+
+.course-table--papers th:nth-child(1) { width: 10%; }
+.course-table--papers th:nth-child(2) { width: 64%; }
+.course-table--papers th:nth-child(3) { width: 14%; }
+.course-table--papers th:nth-child(4) { width: 12%; }
+
+@media print {
+  .md-typeset .course-table { overflow: visible; }
+  .md-typeset .course-table table:not([class]) { min-width: 0; }
+}
