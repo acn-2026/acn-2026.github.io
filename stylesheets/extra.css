@@ -3,10 +3,10 @@
   --md-text-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   --md-code-font: ui-monospace, Consolas, monospace;
 
-  /* 唯一基础色板：明亮柔和的蓝、暖白底色，灰绿点缀，橙色仅用于通知。 */
+  /* 唯一基础色板：明亮柔和的蓝与暖白底色，橙色仅用于通知。 */
   --course-primary: #4C70AE;
   --course-primary-hover: #3D5E97;
-  --course-accent: #658475;
+  --course-accent: var(--course-primary);
   --course-canvas: #FAF8F4;
   --course-surface: #FFFFFF;
   --course-soft: #F3F0EA;
