@@ -414,13 +414,13 @@
 .course-table--presentations th:nth-child(3) { width: 22%; }
 .course-table--presentations th:nth-child(4) { width: 41%; }
 
-.md-typeset .course-table--papers table:not([class]) { min-width: 1050px; }
-.course-table--papers th:nth-child(1) { width: 4.25rem; }
-.course-table--papers th:nth-child(2) { width: 10rem; }
-.course-table--papers th:nth-child(3) { width: 9rem; }
+.md-typeset .course-table--papers table:not([class]) { min-width: 700px; }
+.course-table--papers th:nth-child(1) { width: 3.75rem; }
+.course-table--papers th:nth-child(2) { width: 6.5rem; }
+.course-table--papers th:nth-child(3) { width: 7.5rem; }
 .course-table--papers th:nth-child(4) { width: auto; }
-.course-table--papers th:nth-child(5) { width: 5.5rem; }
-.course-table--papers th:nth-child(6) { width: 4.5rem; }
+.course-table--papers th:nth-child(5) { width: 5rem; }
+.course-table--papers th:nth-child(6) { width: 3.75rem; }
 .md-typeset .course-table--papers table:not([class]) th:nth-child(1),
 .md-typeset .course-table--papers table:not([class]) td:nth-child(1),
 .md-typeset .course-table--papers table:not([class]) th:nth-child(5),
