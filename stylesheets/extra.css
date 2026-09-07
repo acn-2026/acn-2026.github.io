@@ -169,6 +169,8 @@
 /* 橙色仅用于通知边线、图标和浅底，通知文字保持深色。 */
 .md-typeset .admonition.note,
 .md-typeset details.note {
+  font-size: 0.8rem;
+  line-height: 1.75;
   border-color: var(--course-border);
   border-left: 3px solid var(--course-warning);
   border-radius: 0.3rem;
@@ -178,12 +180,19 @@
 }
 .md-typeset .note > .admonition-title,
 .md-typeset .note > summary {
+  font-size: 0.85rem;
+  line-height: 1.6;
   background-color: var(--course-warning-bg);
   color: var(--course-heading);
 }
 .md-typeset .note > .admonition-title::before,
 .md-typeset .note > summary::before { background-color: var(--course-warning); }
 .md-typeset .note > summary::after { color: var(--course-warning); }
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before,
+.md-typeset .note > summary::after {
+  top: calc(0.8em - 0.1rem);
+}
 .md-typeset .admonition.note:focus-within,
 .md-typeset details.note:focus-within {
   box-shadow: 0 0 0 2px var(--course-focus);
