@@ -212,7 +212,9 @@
   background: var(--course-surface);
   box-shadow: 0 1px 3px var(--course-shadow);
   overflow: hidden;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: strict;
 }
 
 .course-info__title {
@@ -294,6 +296,7 @@
   margin: 0;
   color: var(--course-muted);
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 .course-info__team li strong {
   margin-right: 0.45em;
@@ -361,12 +364,16 @@
   font-size: 0.8rem;
   font-weight: 700;
   vertical-align: middle;
+  white-space: nowrap;
 }
 .md-typeset .course-table table:not([class]) td {
   padding: 0.75rem 0.8rem;
   border-top: 1px solid var(--course-border);
   vertical-align: top;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: strict;
+  text-wrap: pretty;
 }
 .md-typeset .course-table table:not([class]) td:first-child {
   color: var(--course-heading);
@@ -386,7 +393,9 @@
   text-decoration: underline;
   text-decoration-color: var(--course-link);
   text-underline-offset: 0.18em;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: strict;
 }
 .md-typeset .course-table a:hover,
 .md-typeset .course-table a:focus-visible {
@@ -408,11 +417,40 @@
 .md-typeset .course-table--schedule table:not([class]) td {
   padding: 0.6rem 0.65rem;
 }
+.md-typeset .course-table--schedule table:not([class]) th:nth-child(1),
+.md-typeset .course-table--schedule table:not([class]) td:nth-child(1),
+.md-typeset .course-table--schedule table:not([class]) th:nth-child(2),
+.md-typeset .course-table--schedule table:not([class]) td:nth-child(2),
+.md-typeset .course-table--schedule table:not([class]) th:nth-child(4),
+.md-typeset .course-table--schedule table:not([class]) td:nth-child(4) {
+  vertical-align: middle;
+  white-space: nowrap;
+}
 
 .course-table--presentations th:nth-child(1) { width: 14%; }
-.course-table--presentations th:nth-child(2) { width: 23%; }
-.course-table--presentations th:nth-child(3) { width: 22%; }
-.course-table--presentations th:nth-child(4) { width: 41%; }
+.course-table--presentations th:nth-child(2) { width: 28%; }
+.course-table--presentations th:nth-child(3) { width: 25%; }
+.course-table--presentations th:nth-child(4) { width: 33%; }
+.md-typeset .course-table--presentations table:not([class]) th,
+.md-typeset .course-table--presentations table:not([class]) td {
+  padding: 0.6rem;
+}
+.md-typeset .course-table--presentations table:not([class]) td:nth-child(1),
+.md-typeset .course-table--presentations table:not([class]) td:nth-child(2),
+.md-typeset .course-table--presentations table:not([class]) td:nth-child(3) {
+  vertical-align: middle;
+}
+.md-typeset .course-table--presentations table:not([class]) td:nth-child(1),
+.presentation-slot,
+.presentation-speaker {
+  white-space: nowrap;
+}
+.presentation-slot,
+.md-typeset .course-table--papers table:not([class]) td:nth-child(1),
+.md-typeset .course-table--papers table:not([class]) td:nth-child(6) {
+  font-variant-numeric: tabular-nums;
+}
+.presentation-speaker { display: inline-block; }
 
 .md-typeset .course-table--papers table:not([class]) { min-width: 700px; }
 .course-table--papers th:nth-child(1) { width: 3.75rem; }
@@ -424,9 +462,16 @@
 .md-typeset .course-table--papers table:not([class]) th:nth-child(1),
 .md-typeset .course-table--papers table:not([class]) td:nth-child(1),
 .md-typeset .course-table--papers table:not([class]) th:nth-child(5),
-.md-typeset .course-table--papers table:not([class]) td:nth-child(5) {
+.md-typeset .course-table--papers table:not([class]) td:nth-child(5),
+.md-typeset .course-table--papers table:not([class]) th:nth-child(6),
+.md-typeset .course-table--papers table:not([class]) td:nth-child(6) {
+  vertical-align: middle;
   white-space: nowrap;
   overflow-wrap: normal;
+}
+.md-typeset .course-table--papers table:not([class]) td:nth-child(2),
+.md-typeset .course-table--papers table:not([class]) td:nth-child(3) {
+  vertical-align: middle;
 }
 
 @media print {
