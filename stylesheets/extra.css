@@ -375,7 +375,9 @@
   line-break: strict;
   text-wrap: pretty;
 }
-.md-typeset .course-table table:not([class]) td:first-child {
+.md-typeset .course-table--schedule table:not([class]) td:first-child,
+.md-typeset .course-table--papers table:not([class]) td:first-child,
+.md-typeset .course-table--presentations table:not([class]) .presentation-week-cell {
   color: var(--course-heading);
   font-weight: 600;
 }
@@ -435,12 +437,19 @@
 .md-typeset .course-table--presentations table:not([class]) td {
   padding: 0.6rem;
 }
-.md-typeset .course-table--presentations table:not([class]) td:nth-child(1),
-.md-typeset .course-table--presentations table:not([class]) td:nth-child(2),
-.md-typeset .course-table--presentations table:not([class]) td:nth-child(3) {
+.md-typeset .course-table--presentations table:not([class]) .presentation-week-cell,
+.md-typeset .course-table--presentations table:not([class]) .presentation-slot-cell,
+.md-typeset .course-table--presentations table:not([class]) .presentation-speakers-cell {
   vertical-align: middle;
 }
-.md-typeset .course-table--presentations table:not([class]) td:nth-child(1),
+.md-typeset .course-table--presentations table:not([class]) .presentation-week-cell,
+.md-typeset .course-table--presentations table:not([class]) .presentation-slot-cell {
+  text-align: center;
+}
+.md-typeset .course-table--presentations table:not([class]) .presentation-week-cell {
+  background-color: inherit;
+}
+.md-typeset .course-table--presentations table:not([class]) .presentation-week-cell,
 .presentation-slot,
 .presentation-speaker {
   white-space: nowrap;
