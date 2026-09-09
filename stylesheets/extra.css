@@ -238,7 +238,7 @@
 }
 
 .course-info__title {
-  padding: 0.9rem 1.15rem;
+  padding: 0.7rem 1.15rem;
   border-bottom: 1px solid var(--course-border);
   background: var(--course-soft);
 }
@@ -430,7 +430,10 @@
   text-decoration-color: currentColor;
 }
 
-.md-typeset .course-table--schedule table:not([class]) { min-width: 0; }
+.md-typeset .course-table--schedule table:not([class]) {
+  min-width: 0;
+  line-height: 1.5;
+}
 /* 课次、主题保持紧凑；论文列缩窄约 20%，将更多空间留给 PPT。 */
 .course-table--schedule th:nth-child(1) { width: 4.5rem; }
 .course-table--schedule th:nth-child(2) { width: 4.75rem; }
@@ -438,7 +441,8 @@
 .course-table--schedule th:nth-child(4) { width: auto; }
 .md-typeset .course-table--schedule table:not([class]) th,
 .md-typeset .course-table--schedule table:not([class]) td {
-  padding: 0.6rem 0.55rem;
+  padding: 0.4rem 0.55rem;
+  text-align: left;
 }
 .md-typeset .course-table--schedule table:not([class]) th:nth-child(1),
 .md-typeset .course-table--schedule table:not([class]) td:nth-child(1),
