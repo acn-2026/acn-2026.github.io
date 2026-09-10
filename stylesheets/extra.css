@@ -213,8 +213,15 @@
   list-style-type: decimal;
 }
 
-/* 论文汇报说明信息较密集，缩短段落和列表之间的纵向间隔。 */
-.paper-report-notice .admonition.note { line-height: 1.52; }
+/* 论文汇报与实验说明：正文更紧凑，标题仍保持原字号与层级。 */
+.paper-report-notice .admonition.note {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.paper-report-notice .admonition.note > .admonition-title {
+  font-size: 0.85rem;
+}
 .paper-report-notice .admonition.note p,
 .paper-report-notice .admonition.note ul,
 .paper-report-notice .admonition.note ol {
@@ -238,7 +245,7 @@
 }
 
 .course-info__title {
-  padding: 0.7rem 1.15rem;
+  padding: 0.55rem 1.15rem;
   border-bottom: 1px solid var(--course-border);
   background: var(--course-soft);
 }
