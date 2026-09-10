@@ -551,7 +551,18 @@
 
 @media (max-width: 640px) {
   /* 手机端保持课程表合理列宽，在表格内部横向滚动，避免英文题名逐字换行。 */
-  .md-typeset .course-table--schedule table:not([class]) { min-width: 760px; }
+  .md-typeset .course-table--schedule table:not([class]) {
+    min-width: 760px;
+    font-size: 0.66rem;
+    line-height: 1.45;
+  }
+  .md-typeset .course-table--schedule table:not([class]) th {
+    font-size: 0.72rem;
+  }
+  .md-typeset .course-table--schedule table:not([class]) th,
+  .md-typeset .course-table--schedule table:not([class]) td {
+    padding: 0.32rem 0.48rem;
+  }
   .course-table--schedule th:nth-child(1) { width: 4.5rem; }
   .course-table--schedule th:nth-child(2) { width: 4.75rem; }
   .course-table--schedule th:nth-child(3) { width: auto; }
