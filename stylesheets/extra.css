@@ -550,7 +550,8 @@
 .paper-venue-short { display: none; }
 
 @media (max-width: 640px) {
-  /* 窄屏保留表格可读字号，并把溢出限制在表格容器内，避免文字互相覆盖。 */
+  /* 手机端保持课程表合理列宽，在表格内部横向滚动，避免英文题名逐字换行。 */
+  .md-typeset .course-table--schedule table:not([class]) { min-width: 760px; }
   .course-table--schedule th:nth-child(1) { width: 4.5rem; }
   .course-table--schedule th:nth-child(2) { width: 4.75rem; }
   .course-table--schedule th:nth-child(3) { width: auto; }
