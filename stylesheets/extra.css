@@ -232,7 +232,7 @@
 
 /* 课程信息：一个紧凑面板，文字仍由 index.md 维护。 */
 .md-typeset .course-info {
-  margin: 1rem 0 1.6rem;
+  margin: 0.8rem 0 1rem;
   border: 1px solid var(--course-border);
   border-top: 3px solid var(--course-border);
   border-radius: 0.3rem;
@@ -245,7 +245,7 @@
 }
 
 .course-info__title {
-  padding: 0.55rem 1.15rem;
+  padding: 0.45rem 1.15rem;
   border-bottom: 1px solid var(--course-border);
   background: var(--course-soft);
 }
@@ -270,13 +270,13 @@
   font-size: 0.72rem;
 }
 
-.course-info__facts { padding: 1rem 1.15rem; }
+.course-info__facts { padding: 0.68rem 1.15rem; }
 .md-typeset .course-info__facts dl {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: auto auto;
   grid-auto-flow: column;
-  gap: 0.35rem 1.5rem;
+  gap: 0.12rem 1.5rem;
   margin: 0;
 }
 .md-typeset .course-info__facts dt {
@@ -290,14 +290,14 @@
   margin: 0;
   color: var(--course-text);
   font-size: 0.8rem;
-  line-height: 1.7;
+  line-height: 1.48;
 }
 .course-info__facts dd strong { color: var(--course-text); font-size: 0.84rem; }
 .course-info__facts dd:nth-of-type(2) strong { font-size: 0.88rem; }
 
 .course-info__team {
   margin: 0 1.15rem;
-  padding: 0.85rem 0 1.05rem;
+  padding: 0.58rem 0 0.68rem;
   border-top: 1px solid var(--course-border);
 }
 .md-typeset .course-info__team > p:first-child {
@@ -314,8 +314,8 @@
 .md-typeset .course-info__team ul {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.3rem 0.75rem;
-  margin: 0.55rem 0 0;
+  gap: 0.08rem 0.75rem;
+  margin: 0.32rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -324,6 +324,7 @@
   margin: 0;
   color: var(--course-muted);
   font-size: 0.8rem;
+  line-height: 1.45;
   white-space: nowrap;
 }
 .course-info__team li strong {
@@ -338,8 +339,22 @@
     grid-template-rows: none;
     grid-auto-flow: row;
   }
-  .md-typeset .course-info__facts dt:not(:first-child) { margin-top: 0.65rem; }
+  .md-typeset .course-info__facts dt:not(:first-child) { margin-top: 0.45rem; }
   .md-typeset .course-info__team ul { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* 分数构成只有一行正文，收紧标题、正文与板块外侧的纵向留白。 */
+.md-typeset .course-info + .admonition.note {
+  margin: 0.8rem 0 1rem;
+  line-height: 1.5;
+}
+.md-typeset .course-info + .admonition.note > .admonition-title {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  line-height: 1.45;
+}
+.md-typeset .course-info + .admonition.note > p {
+  margin-block: 0.55rem;
 }
 
 /* 三张资料表：统一外观，按内容分配列宽，容器在窄屏横向滚动。 */
@@ -467,11 +482,11 @@
 .course-table--presentations th:nth-child(3) { width: 6.5rem; }
 .course-table--presentations th:nth-child(4) { width: auto; }
 .md-typeset .course-table--presentations table:not([class]) {
-  line-height: 1.42;
+  line-height: 1.34;
 }
 .md-typeset .course-table--presentations table:not([class]) th,
 .md-typeset .course-table--presentations table:not([class]) td {
-  padding: 0.35rem 0.6rem;
+  padding: 0.26rem 0.55rem;
 }
 .md-typeset .course-table--presentations table:not([class]) .presentation-week-cell,
 .md-typeset .course-table--presentations table:not([class]) .presentation-slot-cell,
