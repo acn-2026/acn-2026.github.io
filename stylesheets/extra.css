@@ -230,6 +230,22 @@
 .paper-report-notice .admonition.note li { margin-block: 0.14em; }
 .paper-report-notice .admonition.note li > p { margin-block: 0.12em; }
 
+/* 提交材料的命名格式沿用正文字体，避免默认等宽代码字体显得偏小、突兀。 */
+.paper-report-notice .admonition.note code {
+  padding: 0.08em 0.3em;
+  border: 1px solid var(--course-border);
+  border-radius: 0.2rem;
+  background: var(--course-soft);
+  color: var(--course-heading);
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 650;
+  line-height: inherit;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 /* 说明框内的链接自行显示焦点状态，不让点击联动改变整个外框颜色。 */
 .paper-report-notice .admonition.note:focus-within {
   box-shadow: 0 1px 3px var(--course-shadow);
