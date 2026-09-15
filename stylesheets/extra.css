@@ -402,7 +402,7 @@
   .md-typeset .course-info__team ul { grid-template-columns: minmax(0, 1fr); }
 }
 
-/* 分数构成只有一行正文，收紧标题、正文与板块外侧的纵向留白。 */
+/* 分数构成分为总评与附加分两行，保持紧凑并突出关键比例。 */
 .md-typeset .course-info + .admonition.note {
   margin: 0.8rem 0 1rem;
   line-height: 1.5;
@@ -414,6 +414,22 @@
 }
 .md-typeset .course-info + .admonition.note > p {
   margin-block: 0.55rem;
+}
+.md-typeset .course-info + .admonition.note .grading-line {
+  display: block;
+}
+.md-typeset .course-info + .admonition.note .grading-line + .grading-line {
+  margin-top: 0.25rem;
+}
+.md-typeset .course-info + .admonition.note .grading-line strong {
+  font-size: 0.84rem;
+  font-weight: 750;
+}
+.md-typeset .course-info + .admonition.note .grading-line--total strong {
+  color: var(--course-primary-hover);
+}
+.md-typeset .course-info + .admonition.note .grading-line--bonus strong {
+  color: var(--course-warning);
 }
 
 /* 三张资料表：统一外观，按内容分配列宽，容器在窄屏横向滚动。 */
