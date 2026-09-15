@@ -275,9 +275,13 @@
   border-radius: 50%;
   background: var(--course-surface-lighter);
   color: var(--course-on-primary);
-  font-size: 1.15rem;
-  font-weight: 800;
   line-height: 1;
+}
+.paper-report-notice .lab-guide-download__icon svg {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: currentColor;
 }
 
 /* 课程信息：一个紧凑面板，文字仍由 index.md 维护。 */
