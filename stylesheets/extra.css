@@ -230,6 +230,56 @@
 .paper-report-notice .admonition.note li { margin-block: 0.14em; }
 .paper-report-notice .admonition.note li > p { margin-block: 0.12em; }
 
+/* 网络实验开发指南：使用主色下载按钮，作为说明框内唯一的主要操作。 */
+.paper-report-notice .lab-guide-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0.65rem 0 0.8rem;
+  padding: 0.68rem 0.85rem;
+  border: 1px solid var(--course-primary-hover);
+  border-radius: 0.35rem;
+  background: var(--course-primary);
+  color: var(--course-on-primary);
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--course-primary) 20%, transparent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.paper-report-notice .lab-guide-download:visited {
+  color: var(--course-on-primary);
+}
+.paper-report-notice .lab-guide-download:hover,
+.paper-report-notice .lab-guide-download:active {
+  background: var(--course-primary-hover);
+  color: var(--course-on-primary);
+  text-decoration: none;
+}
+.paper-report-notice .lab-guide-download:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--course-primary) 35%, transparent);
+  outline-offset: 2px;
+  background: var(--course-primary-hover);
+  color: var(--course-on-primary);
+  text-decoration: none;
+}
+.paper-report-notice .lab-guide-download__icon {
+  display: grid;
+  flex: 0 0 1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--course-surface-lighter);
+  color: var(--course-on-primary);
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 /* 课程信息：一个紧凑面板，文字仍由 index.md 维护。 */
 .md-typeset .course-info {
   margin: 0.8rem 0 1rem;
