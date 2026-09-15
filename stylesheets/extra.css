@@ -230,6 +230,11 @@
 .paper-report-notice .admonition.note li { margin-block: 0.14em; }
 .paper-report-notice .admonition.note li > p { margin-block: 0.12em; }
 
+/* 说明框内的链接自行显示焦点状态，不让点击联动改变整个外框颜色。 */
+.paper-report-notice .admonition.note:focus-within {
+  box-shadow: 0 1px 3px var(--course-shadow);
+}
+
 /* 网络实验开发指南：使用提示框的暖橙色，和顶部导航的蓝色形成明确区分。 */
 .paper-report-notice .lab-guide-download {
   display: flex;
